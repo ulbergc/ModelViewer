@@ -1,6 +1,7 @@
 // This example creates a custom overlay called USGSOverlay, containing
 // a U.S. Geological Survey (USGS) image of the relevant area on the map.
 // From https://developers.google.com/maps/documentation/javascript/examples/overlay-simple, 5/7/19
+// or https://developers.google.com/maps/documentation/javascript/combining-data
 
 // Set the custom overlay object's prototype to a new instance
 // of OverlayView. In effect, this will subclass the overlay class therefore
