@@ -22,10 +22,10 @@ Ulberg, C. W., Creager, K. C., Moran, S. C., Abers, G. A., Thelen, W. A., Levand
   
 ### plotModel3d.sh
   - makes the overlay images which will be displayed, using [GMT](https://github.com/GenericMappingTools/gmt)
-  - run with ./plotModel3d.sh
+  - run with `./plotModel3d.sh`
   - shouldn't require editing, unless you want to change the look of the images
   
 ### buildkmz.sh
   - creates a .kmz file that can be viewed in Google Earth
   - This was largely written by Bob Crosson (retired, UW), I've modified it to use python instead of c++
-  - run with ./buildkmz.sh
+  - run with `./buildkmz.sh`
