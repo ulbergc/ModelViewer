@@ -21,7 +21,7 @@ Ulberg, C. W., Creager, K. C., Moran, S. C., Abers, G. A., Thelen, W. A., Levand
   - this will set parameters used in plotModel3d.sh and buildkmz.sh
   
 ### plotModel3d.sh
-  - makes the overlay images which will be displayed
+  - makes the overlay images which will be displayed, using [GMT](https://github.com/GenericMappingTools/gmt)
   - run with ./plotModel3d.sh
   - shouldn't require editing, unless you want to change the look of the images
   
