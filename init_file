@@ -1,0 +1,4 @@
+modelfile="./ulbergVpmodel_Run_230.nc"
+overlaysdir="./Overlays/"
+dispname="dvp_ulberg_mask"
+
