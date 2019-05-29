@@ -1,4 +1,11 @@
-modelfile="./ulbergVpmodel_Run_230.nc"
-overlaysdir="./Overlays/"
-dispname="dvp_ulberg_mask"
-
+## variables in any order, leave a space after the variable name, then variable itself has to be a single string
+modelfile ../Models/ulbergVpmodel_Run_230.nc
+overlaysdir ../Overlays
+dispname dvp_ulberg_mask_semb40 
+contname vp
+lat1 45.413
+lat2 46.9764
+lon1 -123.1629
+lon2 -121.1949
+dep1 0
+dep2 20
