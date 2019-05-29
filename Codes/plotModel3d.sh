@@ -86,6 +86,9 @@ then
     gmt grdcontour $tmpcont -R -J -O -C.5 -A.5+f12p -GD75k -Wathicker,white -Wcthick,white >>$FILE
 fi
 
+# add depth to plot
+echo `printf "%.1f" "$z"` | gmt pstext -R -J -O -F+cTL+jTL+f16,0,black -N -Gwhite -Wthin,black -Dj0i/0.10i -Xa0.1i -K >> $FILE
+
 # draw rivers and close file
 #gmt pscoast -R -J -O -W2 -Df -Na -Ia --MAP_TICK_PEN_PRIMARY=thickest >>$FILE
 
