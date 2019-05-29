@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+ xmlns:gx="http://www.google.com/kml/ext/2.2">
+
+<!-- Test using time slider for exposing structure panels -->
+
+<Document>
+    <name>Structure Views</name>
+    <open>1</open>
+    <description>
+        Test control of structure cross-sections via time slider
+    </description>
+<!--
+      <TimeSpan>
+        <begin>1010</begin>
+        <end>1100</end>
+      </TimeSpan>
+-->
+        <open>1</open>
+        <Placemark>
+            <name>Structure Model Boundary</name>
+            <description>Boundary of P velocity model</description>
+            <LineString>
+                <coordinates>
+
+
+                </coordinates>
+            </LineString>
+            <Style>
+                <LineStyle>
+                    <color>#5f00ffff</color>
+                    <width>8</width>
+                </LineStyle>
+            </Style>
+        </Placemark>
+
+<!-- ============================================= -->
+<!-- top of structure overlays -->
+<!-- ============================================= -->
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  1</begin>
+            <end>  2</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_001.0.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  2</begin>
+            <end>  3</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_002.2.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  3</begin>
+            <end>  4</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_003.4.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  4</begin>
+            <end>  5</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_004.6.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  5</begin>
+            <end>  6</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_005.8.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  6</begin>
+            <end>  7</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_007.0.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  7</begin>
+            <end>  8</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_008.2.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  8</begin>
+            <end>  9</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_009.4.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin>  9</begin>
+            <end> 10</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_010.6.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 10</begin>
+            <end> 11</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_011.8.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 11</begin>
+            <end> 12</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_013.0.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 12</begin>
+            <end> 13</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_014.2.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 13</begin>
+            <end> 14</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_015.4.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 14</begin>
+            <end> 15</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_016.6.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 15</begin>
+            <end> 16</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_017.8.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+    <GroundOverlay>
+        <name>ulbergVp_model</name>
+        <TimeSpan>
+            <begin> 16</begin>
+            <end> 17</end>
+        </TimeSpan>
+        <Icon>
+            <href>Overlays/model_019.0.png</href>
+        </Icon>
+        <LatLonBox>
+            <north>46.976400</north>
+            <south>45.413000</south>
+            <east>-121.194900</east>
+            <west>-123.162900</west>
+        </LatLonBox>
+    </GroundOverlay>
+
+<!-- ============================================= -->
+<!-- bottom of structure overlays -->
+<!-- ============================================= -->
+
+</Document>
+</kml>

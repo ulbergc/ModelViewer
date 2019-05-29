@@ -1,0 +1,15 @@
+
+                </coordinates>
+            </LineString>
+            <Style>
+                <LineStyle>
+                    <color>#5f00ffff</color>
+                    <width>8</width>
+                </LineStyle>
+            </Style>
+        </Placemark>
+
+<!-- ============================================= -->
+<!-- top of structure overlays -->
+<!-- ============================================= -->
+

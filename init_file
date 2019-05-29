@@ -1,11 +1,13 @@
 ## variables in any order, leave a space after the variable name, then variable itself has to be a single string
-modelfile ../Models/ulbergVpmodel_Run_230.nc
-overlaysdir ../Overlays
+modelfile Models/ulbergVpmodel_Run_230.nc
+overlaysdir Overlays
 dispname dvp_ulberg_mask_semb40 
-contname vp
+contname 
 lat1 45.413
 lat2 46.9764
 lon1 -123.1629
 lon2 -121.1949
-dep1 0
-dep2 20
+dep1 0 # upper depth limit - won't necessarily equal this value depending on what the depths are
+dep2 20 # lower depth limit - won't necessarily equal this value depending on what the depths are
+base_file_name model
+homedir /Users/ulberg/Documents/GitHub/ModelViewer

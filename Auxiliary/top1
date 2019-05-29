@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+ xmlns:gx="http://www.google.com/kml/ext/2.2">
+
+<!-- Test using time slider for exposing structure panels -->
+
+<Document>
+    <name>Structure Views</name>
+    <open>1</open>
+    <description>
+        Test control of structure cross-sections via time slider
+    </description>
+<!--
+      <TimeSpan>
+        <begin>1010</begin>
+        <end>1100</end>
+      </TimeSpan>
+-->
+        <open>1</open>
+        <Placemark>
+            <name>Structure Model Boundary</name>
+            <description>Boundary of P velocity model</description>
+            <LineString>
+                <coordinates>
+

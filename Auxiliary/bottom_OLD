@@ -1,0 +1,17 @@
+<!-- ============================================= -->
+<!-- bottom of structure overlays -->
+<!-- ============================================= -->
+
+    <ScreenOverlay id="P Wave Velocity">
+        <name>P Wave Key</name>
+        <description>P Wave Key</description>
+        <Icon>
+            <href>Overlays/pwavekey.gif</href>
+        </Icon>
+        <overlayXY x="0." y="0." xunits="fraction" yunits="fraction"/>
+        <screenXY x="0.89" y="0.18" xunits="fraction" yunits="fraction"/>
+        <size x="80" y="300" xunits="pixels" yunits="pixels"/>
+    </ScreenOverlay>
+
+</Document>
+</kml>

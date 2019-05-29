@@ -1,8 +1,10 @@
+#!/bin/bash
 #### code to plot IRIS EMC models from: http://ds.iris.edu/ds/products/emc-earthmodels/
 
-#### read in variables from init_file
+#### read in variables from init_file !!! Need to add default values in case these are empty !!!
 init_file=../init_file
 
+homedir=`grep homedir $init_file | awk '{print $2}'`
 modelfile=`grep modelfile $init_file | awk '{print $2}'`        # name of the netcdf file to read from
 dispname=`grep dispname $init_file | awk '{print $2}'`          # the variable within the netcdf file to display
 contname=`grep contname $init_file | awk '{print $2}'`          # the variable within the netcdf file to contour
@@ -13,9 +15,12 @@ lon1=`grep lon1 $init_file | awk '{print $2}'`                  # western longit
 lon2=`grep lon2 $init_file | awk '{print $2}'`                  # eastern longitude boundary
 dep1=`grep dep1 $init_file | awk '{print $2}'`                  # shallow depth boundary
 dep2=`grep dep2 $init_file | awk '{print $2}'`                  # deep depth boundary
+FILE_base_tmp=`grep base_file_name $init_file | awk '{print $2}'` # something to put at the start of the name
 
-FILE_base_tmp=model # something to put at the start of the name
-tmpdir=../TMP
+modelfile=$homedir/$modelfile
+overlaysdir=$homedir/$overlaysdir
+
+tmpdir=$homedir/TMP
 #tmpmodel=$tmpdir/temp.nc
 tmpvar=$tmpdir/temp_var.nc
 tmpcont=$tmpdir/temp_cont.nc
@@ -23,10 +28,11 @@ tmpcont=$tmpdir/temp_cont.nc
 # define plotting parameters
 AREA=-R$lon1/$lon2/$lat1/$lat2
 PROJ=-JM5i
-ANNOT=-Ba1f.25/a1f.25WNes
+#ANNOT=-Ba1f.25/a1f.25WNes # adds ticks and labels to axes
+ANNOT=-B0WNES # plots without any axis ticks or labels
 
 gmt gmtset FORMAT_GEO_MAP DD
-gmtset DIR_GSHHG ../Auxiliary/gshhg-gmt-2.3.7
+#gmtset DIR_GSHHG ../Auxiliary/gshhg-gmt-2.3.7
 gmt gmtset MAP_FRAME_TYPE plain
 
 # prints out the values in variable depth, assigns to zz
@@ -45,9 +51,10 @@ echo "Model:   $modelfile"
 echo "Depths:  $dep1 - $dep2"
 
 #### begin for loop over every depth
-k=0 # index into the depth variable to read from the netcdf file
+k=-1 # index into the depth variable to read from the netcdf file
 for z in "${ZZ[@]}"
 do
+k=$((k+1))
 
 # check if this is within the depth bounds in the init_file
 if (( $(echo "$z < $dep1" |bc -l) )); then continue; fi
@@ -61,8 +68,11 @@ echo "printing to $FILE"
 
 echo "Converting $dispname"
 gmt grdconvert $modelfile?$dispname[$k] -G$tmpvar
-echo "Converting $contname"
-gmt grdconvert $modelfile?$contname[$k] -G$tmpcont
+
+if [[ -n $contname ]]; then
+    echo "Converting $contname"
+    gmt grdconvert $modelfile?$contname[$k] -G$tmpcont
+fi
 
 # start actual plot
 gmt psbasemap $AREA $PROJ $ANNOT -K >$FILE
@@ -71,21 +81,27 @@ gmt psbasemap $AREA $PROJ $ANNOT -K >$FILE
 gmt grdimage $tmpvar -R -J -O -Q -K -Q -C$tmpdir/colors.cpt >>$FILE
 
 # plot  contours (-GD50k does a label every 50 km)
-gmt grdcontour $tmpcont -R -J -O -C.5 -A.5+f12p -GD75k -Wathicker,white -Wcthick,white >>$FILE
+if [[ -n $contname ]]
+then
+    gmt grdcontour $tmpcont -R -J -O -C.5 -A.5+f12p -GD75k -Wathicker,white -Wcthick,white >>$FILE
+fi
 
 # draw rivers and close file
 #gmt pscoast -R -J -O -W2 -Df -Na -Ia --MAP_TICK_PEN_PRIMARY=thickest >>$FILE
 
 gmt psbasemap -R0/200/0/50 -JX1.2i/.12i -B+n -O >> $FILE # Something to close the file
 
-k=$((k+1))
 done
 #### end for loop over every depth
 
 # convert files to other format and move to overlays directory
 echo "Converting files, putting them in $overlaysdir and cleaning up the trash"
+# png version
 gmt psconvert -A -P -TG $tmpdir/$FILE_base_tmp*.ps
 mv $tmpdir/$FILE_base_tmp*.png $overlaysdir/
+# jpg version
+#gmt psconvert -A -P -Tj $tmpdir/$FILE_base_tmp*.ps
+#mv $tmpdir/$FILE_base_tmp*.jpg $overlaysdir/
 # remove temporary files
 rm $tmpdir/*
 
